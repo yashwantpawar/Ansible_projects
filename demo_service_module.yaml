@@ -1,0 +1,12 @@
+# Update the playbook to add a new task to start httpd services on all web nodes
+-
+    name: 'Execute a script on all web server nodes'
+    hosts: web_nodes
+    tasks:
+        -
+            name: 'Execute a script on all web server nodes'
+            script: /tmp/install_script.sh
+        -   name: 'start httpd services on all web nodes'
+            service:
+              name: httpd
+              state: started
